@@ -1,0 +1,48 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+  // Chamando as funções:
+		imprimirNumeros1a100();
+		imprimirSomaImpares10a1000();
+		imprimirMultiplosDe3SemTerminarEm3();
+	}
+	
+	// Função para imprimir os números de 1 a 100 separados por vírgula:
+	public static void imprimirNumeros1a100() {
+		for (int i = 1; i <= 100; i++) {
+			if (i < 100) {
+				System.out.print(i + ", ");
+			} else {
+				System.out.println(i);
+			}
+		}
+	}
+	
+	// Função para calcular e imprimir o somatório de todos os números ímpares entre 10 e 1000:
+	public static void imprimirSomaImpares10a1000() {
+		int soma = 0;
+		for (int i = 11; i < 1000; i += 2) {
+			soma += i;
+		}
+		System.out.println("Somatório de ímpares entre 10 e 1000: " + soma);
+	}
+	
+	// Função para imprimir todos os números múltiplos de 3 que não terminem em 3:
+	public static void imprimirMultiplosDe3SemTerminarEm3() {
+		List<Integer> listaNumeros = new ArrayList<>();
+		for (int i = 3; i <= 100; i += 3) {
+			if (i % 10 != 3) {
+				listaNumeros.add(i);
+			}
+		}
+		System.out.println("Múltiplos de 3 que não terminam em 3: " + String.join(", ", listaNumeros.stream().map(String::valueOf).toArray(String[]::new)));
+      }
+    }
